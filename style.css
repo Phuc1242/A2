@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Ẩn thanh cuộn */
+    background-color: #000000; /* Nền đen như vũ trụ */
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#heartCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none; /* Cho phép tương tác với canvas bên dưới */
+    z-index: 10; /* Đảm bảo lời chúc nằm trên nền */
+}
+
+.message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcccc; /* Màu chữ sáng, nổi bật */
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 204, 204, 0.8);
+    /* Hiệu ứng nhịp đập/xoay nhẹ cho lời chúc */
+    animation: pulseMessage 4s infinite ease-in-out;
+}
+
+@keyframes pulseMessage {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+    }
+    50% { 
+        transform: scale(1.03) rotate(1deg); 
+    }
+}
